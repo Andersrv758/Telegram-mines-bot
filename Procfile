@@ -1,0 +1,1 @@
+python mines_bot.py
