@@ -30,7 +30,10 @@ async def predice(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f"🎮 Tablero simulado con {minas} minas:\n{mensaje}")
 
 # Ejecutar el bot
-app = ApplicationBuilder().token(8092792974:AAFz5qrUwXBdze25x-8Wnv-BJpLx_WFiAJg).build()
+import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+app = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("predice", predice))
 
